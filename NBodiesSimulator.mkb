@@ -2,6 +2,11 @@
 files
 {
     NBodiesSimulator.cpp
+
+	(ResManager)
+	[ResourceManager]
+    ImageManager.h
+	Image.h
 }
 
 subprojects
