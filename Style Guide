@@ -1,6 +1,6 @@
 <h1> Style Guide </h1>
 <h3>Naming</h3>
-*All variables will be named without spaces.
+*All mutables variables will be named without spaces. e.g. : exampleMutableVar
 	*First letter lowercase
 	*All words capitalized.
 *Classes and types will be named similarly 
@@ -8,7 +8,8 @@
 *Functions named in the same way as variables
 
 <h3>Constants<\h3>
-*We will use preprocessor defines
+*We will use preprocessor defines when applicable
+*All constants will be written in ALL CAPS, with underscores as needed, e.g. :  EXAMPLE_VAR
 *All function types, and arguments will be made constant as appropriate.
 
 <h3>Documentation<\h3>
