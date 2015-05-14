@@ -42,6 +42,8 @@ public:
 		Image a("file1"), b("file2");
 		a = b;
 	*/
+	
+	~Image();
 
 	bool operator==(const Image & other);
 	/*
