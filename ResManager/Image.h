@@ -43,7 +43,7 @@ public:
 		a = b;
 	*/
 
-	bool equality(const Image &);
+	bool operator==(const Image & other);
 	/*
 	Equality operator
 	Compares two images and returns true if they are equal
