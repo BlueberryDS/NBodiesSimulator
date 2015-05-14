@@ -1,6 +1,6 @@
 #ifndef IMAGE
 #define IMAGE
-#include map
+#
 
 
 class Image{
