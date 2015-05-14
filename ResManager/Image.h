@@ -1,5 +1,7 @@
 #ifndef IMAGE
 #define IMAGE
+#include map
+
 
 class Image{
 	//Implementation fields go here. (please remove these tages when done)
@@ -39,6 +41,12 @@ public:
 	e.g.
 		Image a("file1"), b("file2");
 		a = b;
+	*/
+
+	bool equality(const Image &);
+	/*
+	Equality operator
+	Compares two images and returns true if they are equal
 	*/
 };
 
