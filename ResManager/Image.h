@@ -1,11 +1,13 @@
 #ifndef IMAGE
 #define IMAGE
-#
 
 
 class Image{
-	//Implementation fields go here. (please remove these tages when done)
+	//Implementation fields go here. (please remove these tags when done)
+	int width, height; //dimensions in pixels of the Image
+	
 protected:
+	FILE * file;
 	//please define/store the data type used to hold a pointer/reference to the image here.
 	//This is part of the interface. You do not need to create a setter/getter functions for this.
 public:
@@ -15,15 +17,28 @@ public:
 	Sets all fields to NULL or as appropriate.
 	*/
 
-	Image(/*insert nessessary arguments*/);
-	/*
-	(rewrite this documentation when done)
-	Initializes a image object so that it's ready to go. Arguments could be the fields of the object
-	for example.
-	This function lets you do nice syntax things like this. Imagine if we had a posn object
+	Image(int givenWidth, int givenHeight) //this constructor may not be necessary
+	{/* Initializes an image object. Arguments are the images dimensions */
+		width = givenWidth;
+		height = givenHeight;
+		file = NULL;
+	}
 
-	posn a(1,2);
-	*/
+	 
+	Image(FILE * f)
+	{
+		file = f;
+	}
+
+	Image(std::string fileName)
+	{
+		file = fopen(fileName.c_str, "r");
+	}
+
+	~Image()
+	{/* Destructor for image*/
+		delete this;
+	}
 
 	Image(const Image & other);
 	/*
@@ -48,6 +63,8 @@ public:
 	Equality operator
 	Compares two images and returns true if they are equal
 	*/
+
+	
 };
 
 #endif

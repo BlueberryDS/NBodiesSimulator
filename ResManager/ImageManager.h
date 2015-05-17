@@ -3,18 +3,30 @@
 
 #include<string>
 #include "Image.h"
+#include <map>
+#include <iterator>
 
 class ImageManager{
 private:
-	//feilds needed for implementation go here...
+	std::map <std::string , Image> imageMap;
+	
+	Image value;
+	std::string fileName;
+
 public:
-	Image getRes(std::string fileName);
-	/*
+	Image getRes(std::string fileName)
+	{/*
 	Returns a reference type Image of the file specified.
 	If this file is not yet loaded, it will be loaded.
 	Duplicate files(determined by path) will not be loaded.
 	Requires: fileName be a valid path/filename.
 	*/
+		std::pair<std::map<std::string, Image>::iterator, bool> res;
+		Image i = Image(fileName);
+		res = imageMap.insert(std::pair<std::string, Image>(fileName, i)); 
+		return i;
+	}
 };
+
 
 #endif
