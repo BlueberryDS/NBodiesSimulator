@@ -1,7 +1,6 @@
 #ifndef IMAGE
 #define IMAGE
 
-
 class Image{
 	//Implementation fields go here. (please remove these tags when done)
 	int width, height; //dimensions in pixels of the Image
@@ -17,28 +16,15 @@ public:
 	Sets all fields to NULL or as appropriate.
 	*/
 
-	Image(int givenWidth, int givenHeight) //this constructor may not be necessary
-	{/* Initializes an image object. Arguments are the images dimensions */
-		width = givenWidth;
-		height = givenHeight;
-		file = NULL;
-	}
-
+	Image(int givenWidth, int givenHeight); //this constructor may not be necessary
+	/* Initializes an image object. Arguments are the images dimensions */
+	
 	 
-	Image(FILE * f)
-	{
-		file = f;
-	}
+	Image(FILE * f);
+	Image(std::string fileName);
 
-	Image(std::string fileName)
-	{
-		file = fopen(fileName.c_str, "r");
-	}
-
-	~Image()
-	{/* Destructor for image*/
-		delete this;
-	}
+	~Image();
+	/* Destructor for image*/
 
 	Image(const Image & other);
 	/*
@@ -57,6 +43,8 @@ public:
 		Image a("file1"), b("file2");
 		a = b;
 	*/
+	
+	~Image();
 
 	bool operator==(const Image & other);
 	/*
