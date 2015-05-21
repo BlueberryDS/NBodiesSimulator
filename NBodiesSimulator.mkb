@@ -9,6 +9,7 @@ files
     [ResourceManager]
     ImageManager.h
     Image.h
+	Image.cpp
 }
 
 subprojects
