@@ -5,6 +5,11 @@ files
     Image.cpp
     Image.hpp
     ImageManager.hpp
+
+    (data/TestData)
+    [TestData]
+    test-smily.png
+    test-saddy.png
 }
 
 subprojects
