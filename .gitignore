@@ -10,5 +10,4 @@ development.icf
 iwtrace.txt
 /project*/
 /build*/
-/data*/
-/data/
+/data-ram/
