@@ -3,10 +3,13 @@ files
 {
     NBodiesSimulator.cpp
 
-	(ResManager)
-	[ResourceManager]
+    DrawHandle.h
+
+    (ResManager)
+    [ResourceManager]
     ImageManager.h
-	Image.h
+    Image.h
+	Image.cpp
 }
 
 subprojects
