@@ -1,0 +1,17 @@
+#!/usr/bin/env mkb
+files
+{
+    ResManagerTester.cpp
+    Image.cpp
+    Image.hpp
+    ImageManager.hpp
+}
+
+subprojects
+{
+    iw2d
+}
+
+deployment
+{
+}

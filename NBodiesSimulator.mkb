@@ -3,23 +3,13 @@ files
 {
     NBodiesSimulator.cpp
 
-    DrawHandle.h
-
-    (ResManager)
-    [ResourceManager]
-    ImageManager.h
-    Image.h
-	Image.cpp
+    DrawHandle.hpp
 }
 
 subprojects
 {
-    iwutil
-    iw2dscenegraphcore
-    iw2dscenegraph
-    iwgx
-    iwresmanager
-    iwtween
+    ResManager
+    iw2d
 }
 
 deployment

@@ -1,4 +1,5 @@
 #include <string>
+#include "ResManager\Image.hpp"
 
 class DrawHandle
 {
@@ -15,5 +16,4 @@ public:
 	virtual const float getY();
 	virtual const float getRadius();
 	const Image getImage();
-	virtual void DrawHandle();
 };

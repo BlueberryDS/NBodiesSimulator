@@ -1,12 +1,17 @@
 #ifndef IMAGE
 #define IMAGE
 
+#include <string>
+#include <Iw2D.h>
+
+#define FILE_M void //dunno why you did this. I'm just trying to get this to compile, so I added this line
+
 class Image{
 	//Implementation fields go here. (please remove these tags when done)
 	int width, height; //dimensions in pixels of the Image
 	
 protected:
-	FILE * file;
+	FILE_M * file;
 	//please define/store the data type used to hold a pointer/reference to the image here.
 	//This is part of the interface. You do not need to create a setter/getter functions for this.
 public:
@@ -20,7 +25,7 @@ public:
 	/* Initializes an image object. Arguments are the images dimensions */
 	
 	 
-	Image(FILE * f);
+	Image(FILE_M * f);
 	Image(std::string fileName);
 
 	~Image();
@@ -43,8 +48,6 @@ public:
 		Image a("file1"), b("file2");
 		a = b;
 	*/
-	
-	~Image();
 
 	bool operator==(const Image & other);
 	/*

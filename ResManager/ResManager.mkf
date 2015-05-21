@@ -1,0 +1,11 @@
+files
+{
+    Image.cpp
+    Image.hpp
+    ImageManager.hpp
+}
+
+subprojects
+{
+    iw2d
+}
