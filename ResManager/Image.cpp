@@ -5,34 +5,52 @@ Note that 0 is the default value of width and height, and that NULL is the defau
 */
 Image::Image()
 {
-	//Image i = new Image(); You don't make objects like this in C++
-	//i.width = 0;
-	//i.height = 0;
-	//i.file = NULL;
+	fileName = "";
 }
 
-Image::Image(int givenWidth, int givenHeight)
+Image::Image(char *fileName)
 {
-	//Image i = new Image();
-	//i.width = givenWidth;
-	//i.height = givenHeight;
-	//i.file = NULL;
+	this->fileName = fileName;
+	handle = Iw2DCreateImage(fileName);
 }
 
-Image::Image(FILE_M * f)
+Image::~Image()
+{//destructor
+	delete handle;
+	delete fileName;
+}
+
+Image::Image(const Image & other)
 {
-	//Image i = new Image();
-	//i.width = 0;
-	//i.height = 0;
-	//i.file = f;
-	//std::string fileName = 
+	/*
+	Copy Constructor
+	Copys other to itself, during the construction process of the object.
+	e.g
+	Image b;
+	Image a = b;
+	*/
+}
+
+Image& Image::operator = (const Image & other)
+{
+	/*
+	Assignment operator
+	Copies other to itself, unregistering whatever image was already in the object
+	e.g.
+	Image a("file1"), b("file2");
+	a = b;
+	*/
+	delete this->handle;
+	delete this->fileName;
+	Image& output = other;
+	return output;
 
 }
-Image::Image(std::string fileName)
-{
-	//Image i = new Image();
-	//i.width = 0;
-	//i.height = 0;
-	//i.file = fopen(fileName.c_str, "r");
-	//ImageManager::getRes(fileName, i); Classes don't work like this!
+
+bool Image::operator==(const Image & other)
+{/*
+Equality operator
+Compares two images and returns true if they are equal
+*/
+	return this->fileName == other.fileName && this->handle == other.handle;
 }
