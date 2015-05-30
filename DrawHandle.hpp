@@ -9,7 +9,7 @@ class DrawHandle
 	Image image;
 
 public:
-	DrawHandle(String);
+	DrawHandle();
 	virtual ~DrawHandle();
 
 	virtual const float getX();
