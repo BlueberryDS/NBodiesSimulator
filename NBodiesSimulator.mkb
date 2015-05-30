@@ -4,6 +4,11 @@ files
     NBodiesSimulator.cpp
 
     DrawHandle.hpp
+    DummyHandle.hpp
+
+	(Resources)
+	[Resources]
+	testBerry.png
 }
 
 subprojects

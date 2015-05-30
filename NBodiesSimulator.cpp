@@ -3,6 +3,7 @@
 #include "Iw2D.h"
 #include "ResManager\ImageManager.hpp"
 #include "DrawHandle.hpp"
+#include "DummyHandle.hpp"
 
 
 // Main entry point for the application
@@ -19,7 +20,7 @@ int main()
         s3eKeyboardUpdate();
         s3ePointerUpdate();
 
-        Iw2DSurfaceClear(0xff00ff00);
+        Iw2DSurfaceClear(0xffffffff);
         
         // Your rendering/app code goes here.
 

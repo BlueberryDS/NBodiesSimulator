@@ -1,6 +1,9 @@
 #include <string>
 #include "ResManager\Image.hpp"
 
+#ifndef DRAW_HANDLE
+#define DRAW_HANDLE
+
 class DrawHandle
 {
 
@@ -24,7 +27,7 @@ public:
 
 	virtual const float getRotation();
 	/*
-	Returns a float with the rotation in radians
+	Returns a float with the rotation in fractions of pi
 	*/
 
 	const Image getImage();
@@ -32,3 +35,5 @@ public:
 	Returns the Image object to be drawn.
 	*/
 };
+
+#endif
