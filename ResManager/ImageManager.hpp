@@ -29,5 +29,11 @@ public:
 	Requires: fileName be a valid path/filename.
 	*/
 
+	~ImageManager();
+
+#ifdef IW_DEBUG
+	std::map<std::string, pair> & getMap(){ return imageMap; }
+#endif
+
 	};
 #endif

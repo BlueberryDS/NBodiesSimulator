@@ -38,3 +38,9 @@ void ImageManager::uncertify(Image & victim)
 		imageMap.erase(victim.data);
 	}
 }
+
+ImageManager::~ImageManager(){
+	for (iter i = imageMap.begin(); i != imageMap.end(); i++){
+		delete i->second.img;
+	}
+}
