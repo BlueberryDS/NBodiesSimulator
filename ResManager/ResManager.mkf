@@ -3,6 +3,7 @@ files
     Image.cpp
     Image.hpp
     ImageManager.hpp
+	ImageManager.cpp
 }
 
 subprojects

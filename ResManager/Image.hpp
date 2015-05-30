@@ -4,25 +4,30 @@
 #include <string>
 #include <Iw2D.h>
 #include <IwImage.h>
+#include <map>
+#include "Pair.h"
+
+typedef std::map<std::string, pair>::iterator iter;
+class ImageManager;
 
 class Image{
 	//Implementation fields go here. (please remove these tags when done)
 	
-	char * fileName;
 protected:
 	//please define/store the data type used to hold a pointer/reference to the image here.
 	//This is part of the interface. You do not need to create a setter/getter functions for this.
-	CIw2DImage * handle;
+	ImageManager * parent;
+	iter data;
 public:
+	friend class ImageManager;
+
 	Image();
 	/*
 	Default Constructor
 	Sets all fields to NULL or as appropriate.
 	*/
 
-	Image(char *fileName);
-
-	Image(CIw2DImage * handle);
+	Image(iter givenData, ImageManager * givenParent);
 
 	~Image();
 	/* Destructor for image*/
