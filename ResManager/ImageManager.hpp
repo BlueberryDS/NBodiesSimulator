@@ -10,12 +10,17 @@
 
 class ImageManager{
 private:
-	std::map <std::string ,Image> imageMap;
 
-	Image value;
-	std::string fileName;
 
+	std::map <std::string, pair> imageMap;
+	void uncertify(Image & victim);
+	/*
+	Consumes an Image & victim, and removes it from the map
+	*/
+	void certify(Image & child);
+	
 public:
+	friend class Image;
 	Image getRes(std::string fileName);
 	/*
 	Returns a reference type Image of the file specified.
@@ -23,5 +28,6 @@ public:
 	Duplicate files(determined by path) will not be loaded.
 	Requires: fileName be a valid path/filename.
 	*/
-};
+
+	};
 #endif

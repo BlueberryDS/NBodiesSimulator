@@ -19,10 +19,14 @@ Image ImageManager::getRes(std::string fileName)
 
 void ImageManager::certify(Image & baby)
 {
-
+	baby.data->second.count++;
 }
 
 void ImageManager::uncertify(Image & victim)
 {
-
+	victim.data->second.count--;
+	if (!victim.data->second.count)
+	{
+		imageMap.erase(victim.data);
+	}
 }

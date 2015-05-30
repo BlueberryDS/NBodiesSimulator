@@ -26,10 +26,6 @@ Image::Image(const Image & other)
 {
 	/*
 	Copy Constructor
-	Copys other to itself, during the construction process of the object.
-	e.g
-	Image b;
-	Image a = b;
 	*/
 	data = other.data;
 	parent = other.parent;
@@ -40,10 +36,6 @@ Image& Image::operator = (const Image & other)
 {
 	/*
 	Assignment operator
-	Copies other to itself, unregistering whatever image was already in the object
-	e.g.
-	Image a("file1"), b("file2");
-	a = b;
 	*/
 	parent->uncertify(*this);
 	data = other.data;
