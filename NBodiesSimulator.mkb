@@ -10,6 +10,7 @@ subprojects
 {
     ResManager
     iw2d
+	Computation
 }
 
 deployment

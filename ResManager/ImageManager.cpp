@@ -15,6 +15,13 @@ Image ImageManager::getRes(std::string fileName)
 	Duplicate files(determined by path) will not be loaded.
 	Requires: fileName be a valid path/filename.
 	*/
+	std::pair<iter, bool> res = imageMap.insert(std::pair<std::string, pair>(fileName, pair()));
+
+	if (res.second){
+		res.first->second.img = Iw2DCreateImage(fileName.c_str());
+	}
+
+	return Image(res.first, this);
 }
 
 void ImageManager::certify(Image & baby)
@@ -27,6 +34,7 @@ void ImageManager::uncertify(Image & victim)
 	victim.data->second.count--;
 	if (!victim.data->second.count)
 	{
+		delete victim.data->second.img;
 		imageMap.erase(victim.data);
 	}
 }
