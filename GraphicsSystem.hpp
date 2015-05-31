@@ -8,6 +8,7 @@
 #include "IwGeomFMat2D.h"
 
 class GraphicsSystem{
+	const int defaultSize = 25;
 	std::vector<DrawHandle * > handles;
 public:
 	GraphicsSystem();
