@@ -5,6 +5,9 @@ files
 
     DrawHandle.hpp
     DummyHandle.hpp
+    
+    GraphicsSystem.hpp
+    GraphicsSystem.cpp
 
 	(Resources)
 	[Resources]
