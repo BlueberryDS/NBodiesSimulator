@@ -8,29 +8,30 @@ class DrawHandle
 {
 
 public:
-	virtual ~DrawHandle();
+	virtual ~DrawHandle(){}
+	DrawHandle(){}
 
-	virtual const float getX();
+	virtual const float getX() = 0;
 	/*
 	Returns a float containing the X position of the drawing in arbitrary coordinates
 	*/
 
-	virtual const float getY();
+	virtual const float getY() = 0;
 	/*
 	Returns a float containing the Y position of the drawing in arbitrary coordinates
 	*/
 
-	virtual const float getRadius();
+	virtual const float getRadius() = 0;
 	/*
 	Returns a float representing the size in arbirtrary units.
 	*/
 
-	virtual const float getRotation();
+	virtual const float getRotation() = 0;
 	/*
 	Returns a float with the rotation in fractions of pi
 	*/
 
-	const Image getImage();
+	virtual const Image getImage() = 0;
 	/*
 	Returns the Image object to be drawn.
 	*/

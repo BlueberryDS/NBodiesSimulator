@@ -12,7 +12,7 @@ public:
 	const float getY(){ return 100; }
 	const float getRadius(){ return 2; }
 	const float getRotation(){ return 0.5; }
-	Image getImage(){ return image; }
+	const Image getImage(){ return image; }
 };
 
 #endif

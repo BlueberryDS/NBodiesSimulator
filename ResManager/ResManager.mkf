@@ -4,6 +4,7 @@ files
     Image.hpp
     ImageManager.hpp
 	ImageManager.cpp
+	Pair.hpp
 }
 
 subprojects

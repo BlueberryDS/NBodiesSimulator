@@ -5,17 +5,12 @@
 #include <Iw2D.h>
 #include <IwImage.h>
 #include <map>
-#include "Pair.h"
+#include "Pair.hpp"
 
 typedef std::map<std::string, pair>::iterator iter;
 class ImageManager;
 
 class Image{
-	//Implementation fields go here. (please remove these tags when done)
-	
-protected:
-	//please define/store the data type used to hold a pointer/reference to the image here.
-	//This is part of the interface. You do not need to create a setter/getter functions for this.
 	ImageManager * parent;
 	iter data;
 public:
@@ -55,6 +50,8 @@ public:
 	Equality operator
 	Compares two images and returns true if they are equal
 	*/
+
+	CIw2DImage * getCIw2DImage();
 };
 
 #endif

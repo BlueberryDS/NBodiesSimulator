@@ -52,3 +52,7 @@ Compares two images and returns true if they are equal
 */
 	return data == other.data;
 }
+
+CIw2DImage * Image::getCIw2DImage(){
+	return data->second.img;
+}

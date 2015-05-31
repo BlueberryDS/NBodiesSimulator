@@ -3,6 +3,7 @@
 
 #include<string>
 #include "Image.hpp"
+#include "Pair.hpp"
 #include <Iw2D.h>
 #include <map>
 #include <iterator>

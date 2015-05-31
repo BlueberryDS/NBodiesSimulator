@@ -4,13 +4,18 @@
 #include "ResManager\ImageManager.hpp"
 #include "DrawHandle.hpp"
 #include "DummyHandle.hpp"
-
+#include <vector>
 
 // Main entry point for the application
 int main()
 {
-    //Initialise graphics system(s)
+	//Initialise system(s)
+	ImageManager imageManager;
     Iw2DInit();
+
+	//Create a stack of DummyHandles
+	std::vector<DummyHandle> dummyHandles;
+	dummyHandles.push_back(DummyHandle(imageManager));
 
 
     // Loop forever, until the user or the OS performs some action to quit the app
@@ -20,9 +25,9 @@ int main()
         s3eKeyboardUpdate();
         s3ePointerUpdate();
 
+		//Set Screen to Black
         Iw2DSurfaceClear(0xffffffff);
         
-        // Your rendering/app code goes here.
 
 
         //Draws Surface to screen

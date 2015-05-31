@@ -34,7 +34,7 @@ void ImageManager::uncertify(Image & victim)
 	victim.data->second.count--;
 	if (!victim.data->second.count)
 	{
-		delete victim.data->second.img;
+		delete victim.getCIw2DImage();
 		imageMap.erase(victim.data);
 	}
 }

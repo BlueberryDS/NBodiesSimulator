@@ -5,7 +5,8 @@ files
     Image.cpp
     Image.hpp
     ImageManager.hpp
-	ImageManager.cpp
+    ImageManager.cpp
+    Pair.hpp
 
     (data/TestData)
     [TestData]
