@@ -1,4 +1,9 @@
+#Inclue all relevant file names, with extensions, in the braces below
+#for example
+#System.hpp
 files
 {
-
+	Particle.hpp
+	System.hpp
+	System.cpp
 }

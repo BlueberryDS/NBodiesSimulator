@@ -11,3 +11,12 @@ iwtrace.txt
 /project*/
 /build*/
 /data-ram/
+*.dmp
+/Debug/
+*.vcxproj
+*.v12
+*.sdf
+*.opensdf
+*.filters
+*.sln
+*.v12.suo
