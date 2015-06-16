@@ -4,7 +4,7 @@
 #include <math.h>
 class Particle
 {/*
- This is the particle class. The app operates on a two-dimensional plane
+ This is the particle class. Note that this app operates on a two-dimensional plane
  */
 public:
 	double mass;
@@ -24,7 +24,6 @@ public:
 	{ /*
 			Computes the square of the distance between p and this particle.
 	  */
-	
 		return (pos.x - p.pos.x)*(pos.x - p.pos.x) + (pos.y - p.pos.y)*(pos.y - p.pos.y);
 	}
 

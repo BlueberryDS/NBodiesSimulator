@@ -3,12 +3,16 @@
 #include "Particle.hpp"
 class System
 {
-	int N; //the number of particles in the simulation
-	std::vector<Particle> sys; 
 	double dt; //the time step. The default time is 10^-3s
-	double totalMass;
+
 private:
-	double xRandMin = 10000;
+	std::vector<Particle> sys;
+	double xCOM;
+	double yCOM;
+	double totalMass;
+	int N; //the number of particles in the simulation
+
+	double xRandMin = -10000;
 	double xRandMax = -xRandMin;
 	double yRandMin = xRandMin; 
 	double yRandMax = xRandMax;
@@ -66,4 +70,7 @@ public:
 
 	double getTotalMass(){ return totalMass; };
 	// returns the system's total mass
+
+	int getN(){ return N; }
+	// returns the number of particles in the system
 };

@@ -12,22 +12,31 @@ System::System(){
 	std::vector < Particle > sys;
 	dt = defaultTime;
 	totalMass = 0;
+	xCOM = 0;
+	yCOM = 0;
 }
 System::System(int numberOfParticles) {
 	N = numberOfParticles;
 	dt = defaultTime;
 	std::vector < Particle > sys;
-
+	double xCOMNew = 0;
+	double yCOMNew = 0;
 	for (int i = 0; i < N; i++)
 	{
 		Particle p(defaultMass);
 		p.pos.x = rand()*(xRandMax - xRandMin) + xRandMin;
 		p.pos.y = rand()*(yRandMax - yRandMin) + yRandMin;
+
+		xCOMNew += p.pos.x;
+		yCOMNew += p.pos.y;
+
 		p.vel.x = rand()*(vRandMax - vRandMin) + vRandMin;
 		p.vel.y = rand()*(vRandMax - vRandMin) + vRandMin;
 		totalMass += defaultMass;
 		sys.push_back(p);
 	}
+	xCOM = xCOMNew / N;
+	yCOM = yCOMNew / N;
 }
 
 void System::putAtRest()
@@ -37,7 +46,14 @@ void System::putAtRest()
 }
 
 void System::step()
-{
+{//  Moves all particles in the system by the specified time, in seconds
+	// Note that this function only traverse ~ 0.5*N^2 iterations, by using
+	// a 'handshake-problem' type of approach. Each pair of masses is only 
+	// visited once
+
+	if (N <= 1)
+		return;
+
 	std::vector<double> xNew;
 	std::vector<double> yNew;
 	std::vector<double> vxNew;
@@ -54,8 +70,8 @@ void System::step()
 	{
 		for (int j = i+1; j < N; j++)
 		{
-			double dist_x = abs(sys[i].pos.x - sys[j].pos.x);
-			double dist_y = abs(sys[i].pos.y - sys[j].pos.y);
+			double dist_x = fabs(sys[i].pos.x - sys[j].pos.x);
+			double dist_y = fabs(sys[i].pos.y - sys[j].pos.y);
 			double dist = sqrt(dist_x*dist_x + dist_y*dist_y);
 
 			//double force = gravConstant*sys[i].mass*sys[j].mass / (dist*dist);
@@ -91,33 +107,24 @@ void System::step()
 }
 
 double System::getCOMX()
-{
-	double mxTOT;
-	for (int i = 0; i < N; i++)
-		mxTOT += (sys[i].mass*sys[i].pos.x);
-
-	return mxTOT / totalMass;
+{//Returns the x-coordinate of the system's Center Of Mass
+	return xCOM;
 }
 
 double System::getCOMY()
-{
-	double myTOT;
-	for (int i = 0; i < N; i++)
-		myTOT += (sys[i].mass*sys[i].pos.y);
-
-	return myTOT / totalMass;
+{//Returns the y-coordinate of the system's Center Of Mass
+	return yCOM;
 }
 
 void System::skipSteps(int skips)
-{
+{//Moves the system through 'skips' steps.
 	for (int i = 0; i < skips; i++)
 		step();
 }
 
 void System::stepBy(double time)
-{
-	int numOfSteps = floor(time / dt);
-	return skipSteps(numOfSteps);
+{//Moves the system through a number of seconds given by time.
+	skipSteps(floor(time / dt);
 }
-//  Moves all particles in the system by the specified time, in seconds
+
 #endif
