@@ -116,15 +116,25 @@ double System::getCOMY()
 	return yCOM;
 }
 
-void System::skipSteps(int skips)
+void System::skipSteps(unsigned int skips)
 {//Moves the system through 'skips' steps.
-	for (int i = 0; i < skips; i++)
+	for (unsigned int i = 0; i < skips; i++)
 		step();
 }
 
 void System::stepBy(double time)
 {//Moves the system through a number of seconds given by time.
 	skipSteps(floor(time / dt);
+}
+
+double System::getX(int n)
+{
+	return sys[n].pos.x;
+}
+
+double System::getY(int n)
+{
+	return sys[n].pos.y;
 }
 
 #endif

@@ -56,8 +56,9 @@ public:
 	void step(); 
 	//	Moves all particles in the system by one of specified time steps
 
-	void skipSteps(int skips);
+	void skipSteps(unsigned int skips);
 	// Moves all particles by a "skips" steps in one call. 
+	// 
 
 	void stepBy(double time);
 	//  Moves all particles in the system by the specified time, in seconds
@@ -73,4 +74,11 @@ public:
 
 	int getN(){ return N; }
 	// returns the number of particles in the system
+
+	double getX(int n);
+	// returns the y position of the nth particle
+
+	double getY(int n);
+	//return the y coordinate of the nth particle
+
 };
